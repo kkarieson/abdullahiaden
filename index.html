@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Karieson Creative Hub</title>
+
+  <style>
+/* ==================================================
+   ROOT VARIABLES
+================================================== */
+
+:root {
+  --red: #c00000;
+  --dark-red: #8f0000;
+  --black: #080808;
+  --white: #ffffff;
+  --light-grey: #f5f5f5;
+  --grey: #666666;
+  --border: #dddddd;
+}
+
+
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+/* ==================================================
+   HEADER + HERO — ONE CONTINUOUS SECTION
+================================================== */
+
+header {
+  height: 8rem;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 6rem;
+  width: auto;
+  display: block;
+}
+
+.hamburger {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: var(--red);
+  color: var(--white);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 3rem 5% 2rem;
+
+  min-height: 32rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  text-align: center;
+  color: var(--red);
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--red);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.hero p {
+  max-width: 45rem;
+  margin: 0 auto;
+  text-align: left;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
+}
+
+.hero-btn {
+  display: block;
+
+  width: 11rem;
+  padding: 12px 28px;
+
+  background: var(--red);
+  color: var(--white);
+
+  border: 2px solid var(--white);
+  border-radius: 6px;
+
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  text-align: center;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Push the first button down */
+.hero p + .hero-btn {
+  margin-top: auto;
+}
+
+/* Stack buttons vertically */
+.hero-btn + .hero-btn {
+  margin-top: 1rem;
+}
+
+.hero-btn:hover {
+  background: var(--white);
+  color: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   SIDE MENU
+================================================== */
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -19rem;
+  width: 19rem;
+  height: 100vh;
+  background: var(--black);
+  padding: 5rem 2rem 2rem;
+  z-index: 2000;
+  transition: right 0.25s ease;
+}
+
+.side-menu.active {
+  right: 0;
+}
+
+.close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  border: none;
+  background: none;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.side-menu a {
+  display: block;
+  padding: 0.9rem 0;
+  color: var(--white);
+  border-bottom: 1px solid #333;
+  text-decoration: none;
+}
+
+.side-menu a:hover {
+  color: var(--red);
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  header {
+    height: 6rem;
+    padding: 0 5%;
+  }
+
+  .logo img {
+    height: 4.5rem;
+  }
+
+  .hero {
+    padding: 3rem 20px 5.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-btn {
+    margin-top: 2.8rem;
+    margin-left: 0.7rem;
+    margin-right: 0.7rem;
+    min-width: 10.5rem;
+  }
+
+  .side-menu {
+    width: 17rem;
+    right: -17rem;
+  }
+
+  .side-menu.active {
+    right: 0;
+  }
+}
+
+
+@media (max-width: 400px) {
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-btn {
+    display: block;
+    width: 12rem;
+    margin: 1.2rem auto 0;
+  }
+}
+/* ==================================================
+   GENERAL BUTTON
+================================================== */
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 12px 28px;
+
+  background: var(--red);
+  color: var(--white);
+
+  border: 2px solid var(--white);
+  border-radius: 6px;
+
+  font-weight: 700;
+  font-size: 0.95rem;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--white);
+  color: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+
+/* ==================================================
+   CREATIVE HUB
+================================================== */
+
+.hub {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+.intro-title {
+  background: var(--light-grey);
+  padding: 30px 28px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.intro-title h2 {
+  margin: 0 0 18px;
+  text-align: center;
+  color: var(--red);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.intro-title p {
+  margin: 0;
+  color: #333333;
+  line-height: 1.8;
+  text-align: center;
+}
+
+
+/* ==================================================
+   GENERAL SECTIONS
+================================================== */
+
+section {
+  padding: 85px 25px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: 28px;
+  line-height: 1.3;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+.section-text {
+  max-width: 800px;
+  color: var(--grey);
+  line-height: 1.8;
+}
+
+
+/* ==================================================
+   ABOUT
+================================================== */
+
+.about {
+  background: var(--white);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-box {
+  border-left: 4px solid var(--red);
+  padding-left: 25px;
+}
+
+.about-box h3 {
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+
+/* ==================================================
+   SERVICES
+================================================== */
+
+.services {
+  background: var(--light-grey);
+}
+
+
+/* ==================================================
+   GLOBAL CARDS
+================================================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+  align-items: stretch;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: var(--white);
+  padding: 30px 25px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--red);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card-number {
+  color: var(--red);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+  color: var(--black);
+  text-align: center;
+}
+
+.card p {
+  color: var(--grey);
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+
+/* ==================================================
+   INTERESTS
+================================================== */
+
+.interests {
+  background: var(--white);
+}
+
+.interest-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 35px auto 0;
+}
+
+.interest {
+  padding: 25px 20px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.interest strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.interest p {
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* ==================================================
+   COMMUNITY
+================================================== */
+
+.community {
+  background: var(--black);
+  color: var(--white);
+}
+
+.community .section-title {
+  color: var(--white);
+}
+
+.community .section-text {
+  color: #cccccc;
+}
+
+.community-box {
+  margin-top: 35px;
+  padding: 35px;
+  border: 1px solid #444;
+  border-left: 4px solid var(--red);
+}
+
+.community-box h3 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.community-box strong {
+  color: var(--red);
+}
+
+
+/* ==================================================
+   WRITING
+================================================== */
+
+.writing {
+  background: var(--light-grey);
+}
+
+.writing .cards {
+  max-width: 800px;
+  perspective: 1000px;
+}
+
+.writing .card {
+  width: 100%;
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+
+  /* 3D raised surface */
+  border: 1px solid #d8d8d8;
+  box-shadow:
+    0 2px 0 #cfcfcf,
+    0 5px 0 #bdbdbd,
+    0 10px 18px rgba(0, 0, 0, 0.16);
+
+  transform: translateY(0);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+  overflow: hidden;
+}
+
+/* Pick-up / lift effect */
+.writing .card:hover {
+  transform: translateY(-7px);
+  box-shadow:
+    0 3px 0 #cfcfcf,
+    0 8px 0 #aaa,
+    0 18px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* Subtle top highlight */
+.writing .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--red);
+}
+
+/* Card label */
+.writing .card .section-label {
+  margin-bottom: 12px;
+}
+
+/* Small slim button */
+.writing .card .btn {
+  margin-top: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 7px 14px;
+  font-size: 13px;
+  line-height: 1.2;
+  border-radius: 5px;
+  width: auto;
+}
+
+
+/* ==================================================
+   EDUCATION
+================================================== */
+
+.education {
+  background: var(--white);
+}
+
+.education .cards {
+  max-width: 1100px;
+}
+
+.education .card {
+  min-height: 190px;
+}
+
+.education .card p {
+  margin-top: 5px;
+}
+
+
+/* ==================================================
+   SKILLS
+================================================== */
+
+.skills {
+  background: var(--light-grey);
+}
+
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 30px auto 0;
+}
+
+.skill {
+  padding: 15px 18px;
+
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+
+/* ==================================================
+   APPROACH
+================================================== */
+
+.approach {
+  text-align: center;
+  background: var(--white);
+}
+
+.approach .section-text {
+  margin: auto;
+}
+
+.motto {
+  margin: 30px auto;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--red);
+}
+
+
+/* ==================================================
+   CONTACT
+================================================== */
+
+.contact {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.contact .container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 40px 30px;
+
+  border: 1px solid #444;
+  border-radius: 8px;
+
+  background: #111111;
+}
+
+.contact .section-title {
+  margin: 0 0 18px;
+  color: var(--red);
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contact .section-text {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #dddddd;
+  line-height: 1.8;
+  text-align: center;
+}
+
+
+/* ==================================================
+   BLOG
+================================================== */
+
+.blog {
+  background: var(--white);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 40px auto 0;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: var(--light-grey);
+  padding: 30px;
+
+  border: 1px solid var(--border);
+  border-radius: 8px;
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--red);
+}
+
+.blog-number {
+  color: var(--red);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.blog-category {
+  color: var(--grey);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.blog-card h3 {
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--black);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.blog-card p {
+  color: var(--grey);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.read-more {
+  margin-top: auto;
+  color: var(--red);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.read-more:hover {
+  color: var(--black);
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+  background: #050505;
+  color: #999;
+  text-align: center;
+  padding: 25px;
+  font-size: 13px;
+}
+
+footer strong {
+  color: var(--white);
+}
+
+
+/* ==================================================
+   RESPONSIVE — TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+  .cards,
+  .blog-grid,
+  .interest-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==================================================
+   RESPONSIVE — MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+  header {
+    height: 6rem;
+    padding: 0 5%;
+  }
+
+  .logo img {
+    height: 4.5rem;
+  }
+
+  .side-menu {
+    width: 17rem;
+    right: -17rem;
+  }
+
+  section {
+    padding: 60px 20px;
+  }
+
+  .hero {
+    padding: 4rem 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-btn {
+    margin: 10px 6px;
+  }
+
+  .hub {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 35px 16px;
+  }
+
+  .intro-title {
+    padding: 25px 22px;
+  }
+
+  .intro-title p {
+    text-align: center;
+  }
+
+  .cards,
+  .blog-grid,
+  .interest-list,
+  .skill-list {
+    grid-template-columns: 1fr;
+  }
+
+  .card,
+  .blog-card,
+  .interest {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 25px;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .contact {
+    padding: 50px 16px;
+  }
+
+  .contact .container {
+    padding: 30px 20px;
+  }
+
+  .contact .section-title {
+    font-size: 1.7rem;
+  }
+
+  .book {
+    padding: 28px;
+  }
+
+  .motto {
+    font-size: 22px;
+  }
+}
+
+
+/* ==================================================
+   VERY SMALL SCREENS
+================================================== */
+
+@media (max-width: 400px) {
+
+  .hero h1 {
+    font-size: 2.1rem;
+  }
+
+  .hero-btn {
+    display: block;
+    width: fit-content;
+    margin: 10px auto;
+  }
+
+  .skill {
+    text-align: left;
+  }
+}
+
+</style>
+</head>
+<body>    <!-- =========================  
+       HEADER  
+  ========================= -->    <header>  <div class="logo">  
+  <img  
+    src="kson_logo.png"  
+    alt="Karieson Creative Hub"  
+  >  
+</div>  
+
+<button  
+  class="hamburger"  
+  id="menuBtn"  
+  type="button"  
+  aria-label="Open menu"  
+>  
+  ☰  
+</button>
+
+  </header>    <!-- =========================  
+       SIDE MENU  
+  ========================= -->    <nav  
+    class="side-menu"  
+    id="sideMenu"  
+    aria-label="Main navigation"  
+  >  <button  
+  class="close-menu"  
+  id="closeBtn"  
+  type="button"  
+  aria-label="Close menu"  
+>  
+  ×  
+</button>  
+
+<a href="index.html">Home</a>
+
+<a href="blogs.html">Blog articles</a>
+<a href="ebooks.html">eBook Novels</a>
+<a href="services.html">What I Do</a>
+<a href="about-me.html">About Karieson</a>
+<a href="contacts.html">Get in Touch</a>
+
+  </nav>  
+  <!-- =========================  
+       HERO  
+  ========================= -->    <section  
+  class="hero"  
+  id="home"  
+>    <h1>  <span>Karieson Personal Website</span>
+
+  </h1>    <p>  
+    I am a Kenyan technology professional, author and community-focused  
+            innovator interested in technology, cybersecurity, networking,  
+            project management, research, digital empowerment and creative  
+            storytelling.  
+  </p>  <a
+href="about-me.html"
+class="hero-btn"
+
+> 
+
+About Me
+
+  </a>  <a
+href="contacts.html"
+class="hero-btn"
+
+> 
+
+Get in Touch
+
+  </a>  </section>
+
+
+<!-- =========================
+       Learning. Creating. Building.
+  ========================= -->
+
+  <main class="hub" id="hub">
+
+    <div class="intro-title">
+      <h2>My professionals</h2>
+      <p>  My professional interests include Information Technology,
+Information Science, cybersecurity, networking, project management,
+research, monitoring and evaluation, agriculture and digital
+empowerment.</p>
+</div>
+<div class="intro-title">
+<h2>My goals</h2>
+      <p>
+        My goal is to continue developing my professional knowledge,
+creating meaningful work and supporting initiatives that connect
+technology with real-world community needs.
+      </p>
+    </div>
+    
+
+</main>
+
+
+<!-- ==================================================
+     WHAT I DO
+================================================== -->
+
+<section class="services" id="work">
+
+<div class="container">
+
+<div class="section-label">
+Professional Interests
+</div>
+
+<h2 class="section-title">
+What I Do
+</h2>
+
+<p class="section-text">
+My interests bring together technology, project development,
+research, creativity and community-focused innovation.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-number">01</div>
+<h3>Technology</h3>
+<p>
+Information technology, information systems, networking,
+cybersecurity and digital solutions.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">02</div>
+<h3>Writing & Publishing</h3>
+<p>
+Creative writing, digital storytelling and eBook publishing
+through Karieson Creative Hub.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">03</div>
+<h3>Project Management</h3>
+<p>
+Project planning, coordination, leadership, implementation
+and community-oriented initiatives.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">04</div>
+<h3>Research</h3>
+<p>
+Research interests covering technology, agriculture,
+digital financial inclusion and community development.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">05</div>
+<h3>Digital Empowerment</h3>
+<p>
+Exploring how technology and digital skills can create
+opportunities for individuals and communities.
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">06</div>
+<h3>Community Innovation</h3>
+<p>
+Developing practical ideas that connect technology,
+agriculture and sustainable community development.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     INTERESTS
+================================================== -->
+
+<section class="interests">
+
+<div class="container">
+
+<div class="section-label">
+Areas of Interest
+</div>
+
+<h2 class="section-title">
+Professional Interests
+</h2>
+
+<div class="interest-list">
+
+<div class="interest">
+<strong>Information Technology</strong>
+<p>Practical ICT solutions and information systems.</p>
+</div>
+
+<div class="interest">
+<strong>Cybersecurity & Networking</strong>
+<p>Cybersecurity, computer networking and digital security.</p>
+</div>
+
+<div class="interest">
+<strong>Project Management</strong>
+<p>Planning, coordination, leadership and implementation.</p>
+</div>
+
+<div class="interest">
+<strong>Research & Monitoring</strong>
+<p>Research, evaluation, learning and evidence-based development.</p>
+</div>
+
+<div class="interest">
+<strong>Digital Empowerment</strong>
+<p>Technology and digital skills for creating opportunities.</p>
+</div>
+
+<div class="interest">
+<strong>Agriculture & Innovation</strong>
+<p>Technology-enabled approaches to agricultural development.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     WRITING & PUBLISHING
+========================= -->
+
+<section class="writing" id="writing">
+
+  <div class="container">
+
+    <div class="section-label">
+      Creativity & Authorship
+    </div>
+
+    <h2 class="section-title">
+      Writing & Publishing
+    </h2>
+
+    <p class="section-text">
+      Writing is an important part of my creative identity. Through
+      Karieson Creative Hub, I develop original stories and digital
+      publications.
+    </p>
+
+    <div class="cards">
+
+      <!-- 01 -->
+      <div class="card">
+        <div class="card-number">01</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Love Beyond the Distance
+        </h3>
+
+        <p>
+          A story about love, dreams, distance, family, resilience and
+          the choices people make when life takes them in different
+          directions.
+        </p>
+
+        <a
+          href="love-beyond-distance.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 02 -->
+      <div class="card">
+        <div class="card-number">02</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          When Hearts Remember
+        </h3>
+
+        <p>
+          A romantic journey of two people whose past continues to shape
+          their present and their hopes for the future.
+        </p>
+
+        <a
+          href="when-hearts-remember.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 03 -->
+      <div class="card">
+        <div class="card-number">03</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Promise We Made
+        </h3>
+
+        <p>
+          A story of love, commitment and the difficult promises that
+          must be kept when life changes unexpectedly.
+        </p>
+
+        <a
+          href="the-promise-we-made.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 04 -->
+      <div class="card">
+        <div class="card-number">04</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Last Chapter
+        </h3>
+
+        <p>
+          A fictional journey filled with unexpected choices, hidden
+          truths and the courage to begin again.
+        </p>
+
+        <a
+          href="the-last-chapter.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 05 -->
+      <div class="card">
+        <div class="card-number">05</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Beyond the Horizon
+        </h3>
+
+        <p>
+          An inspiring fictional story about ambition, uncertainty and
+          the search for a better future.
+        </p>
+
+        <a
+          href="beyond-the-horizon.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 06 -->
+      <div class="card">
+        <div class="card-number">06</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Road We Choose
+        </h3>
+
+        <p>
+          A character-driven story exploring friendship, difficult
+          decisions and the consequences of choosing one's own path.
+        </p>
+
+        <a
+          href="the-road-we-choose.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 07 -->
+      <div class="card">
+        <div class="card-number">07</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Echoes of Yesterday
+        </h3>
+
+        <p>
+          A historical story where the lives of ordinary people unfold
+          against the changing events of their time.
+        </p>
+
+        <a
+          href="echoes-of-yesterday.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 08 -->
+      <div class="card">
+        <div class="card-number">08</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Forgotten Village
+        </h3>
+
+        <p>
+          A journey into a forgotten community where old memories reveal
+          stories that shaped generations.
+        </p>
+
+        <a
+          href="the-forgotten-village.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 09 -->
+      <div class="card">
+        <div class="card-number">09</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Before the New Dawn
+        </h3>
+
+        <p>
+          A story of courage, survival and hope during a period of
+          profound social change.
+        </p>
+
+        <a
+          href="before-the-new-dawn.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 10 -->
+      <div class="card">
+        <div class="card-number">10</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Journey Begins
+        </h3>
+
+        <p>
+          An adventurous journey into unfamiliar places where courage,
+          friendship and determination are tested.
+        </p>
+
+        <a
+          href="the-journey-begins.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 11 -->
+      <div class="card">
+        <div class="card-number">11</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Across the Unknown
+        </h3>
+
+        <p>
+          A thrilling adventure about exploration, discovery and the
+          risks of venturing beyond the familiar.
+        </p>
+
+        <a
+          href="across-the-unknown.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 12 -->
+      <div class="card">
+        <div class="card-number">12</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Hidden Path
+        </h3>
+
+        <p>
+          A mysterious path leads the characters into an unexpected
+          adventure filled with challenges and discoveries.
+        </p>
+
+        <a
+          href="the-hidden-path.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 13 -->
+      <div class="card">
+        <div class="card-number">13</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Missing Letter
+        </h3>
+
+        <p>
+          A mysterious letter sets off a chain of events that reveals
+          secrets hidden for years.
+        </p>
+
+        <a
+          href="the-missing-letter.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 14 -->
+      <div class="card">
+        <div class="card-number">14</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Silent Witness
+        </h3>
+
+        <p>
+          A suspenseful story surrounding a forgotten event and a witness
+          who knows more than anyone realizes.
+        </p>
+
+        <a
+          href="the-silent-witness.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 15 -->
+      <div class="card">
+        <div class="card-number">15</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Secrets in the Dark
+        </h3>
+
+        <p>
+          Unanswered questions and hidden secrets slowly emerge as the
+          characters search for the truth.
+        </p>
+
+        <a
+          href="secrets-in-the-dark.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 16 -->
+      <div class="card">
+        <div class="card-number">16</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          A Reason to Rise
+        </h3>
+
+        <p>
+          An inspirational story about resilience, hope and finding
+          strength after difficult experiences.
+        </p>
+
+        <a
+          href="a-reason-to-rise.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 17 -->
+      <div class="card">
+        <div class="card-number">17</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Courage to Begin
+        </h3>
+
+        <p>
+          A story about overcoming fear and finding the courage to start
+          a new chapter in life.
+        </p>
+
+        <a
+          href="the-courage-to-begin.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 18 -->
+      <div class="card">
+        <div class="card-number">18</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          After the Storm
+        </h3>
+
+        <p>
+          A powerful journey of recovery, hope and discovering new
+          possibilities after hardship.
+        </p>
+
+        <a
+          href="after-the-storm.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 19 -->
+      <div class="card">
+        <div class="card-number">19</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Life Between the Lines
+        </h3>
+
+        <p>
+          A contemporary story exploring society, relationships, identity
+          and the realities of modern life.
+        </p>
+
+        <a
+          href="life-between-the-lines.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 20 -->
+      <div class="card">
+        <div class="card-number">20</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The City We Live In
+        </h3>
+
+        <p>
+          A modern story about ambition, friendship and the pressures of
+          life in a changing society.
+        </p>
+
+        <a
+          href="the-city-we-live-in.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 21 -->
+      <div class="card">
+        <div class="card-number">21</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Voices of Tomorrow
+        </h3>
+
+        <p>
+          A contemporary story exploring young voices, social change and
+          the dreams of a new generation.
+        </p>
+
+        <a
+          href="voices-of-tomorrow.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 22 -->
+      <div class="card">
+        <div class="card-number">22</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Finding My Way
+        </h3>
+
+        <p>
+          A coming-of-age story about friendship, identity, dreams and
+          discovering one's place in the world.
+        </p>
+
+        <a
+          href="finding-my-way.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 23 -->
+      <div class="card">
+        <div class="card-number">23</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Next Step
+        </h3>
+
+        <p>
+          A young person's journey through difficult choices, friendship
+          and the uncertainty of growing up.
+        </p>
+
+        <a
+          href="the-next-step.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 24 -->
+      <div class="card">
+        <div class="card-number">24</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Dreams Don't Wait
+        </h3>
+
+        <p>
+          An inspiring young adult story about pursuing dreams despite
+          doubt, obstacles and unexpected setbacks.
+        </p>
+
+        <a
+          href="dreams-dont-wait.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 25 -->
+      <div class="card">
+        <div class="card-number">25</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Family We Carry
+        </h3>
+
+        <p>
+          A story about family bonds, forgiveness, difficult memories and
+          the meaning of belonging.
+        </p>
+
+        <a
+          href="the-family-we-carry.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 26 -->
+      <div class="card">
+        <div class="card-number">26</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Home Again
+        </h3>
+
+        <p>
+          A heartfelt story about returning home and confronting the
+          relationships and memories left behind.
+        </p>
+
+        <a
+          href="home-again.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 27 -->
+      <div class="card">
+        <div class="card-number">27</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Between Us
+        </h3>
+
+        <p>
+          A story of relationships, misunderstandings and the
+          conversations that can change everything.
+        </p>
+
+        <a
+          href="between-us.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 28 -->
+      <div class="card">
+        <div class="card-number">28</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          Under the African Sky
+        </h3>
+
+        <p>
+          A story rooted in African life, community, tradition and the
+          dreams of a changing generation.
+        </p>
+
+        <a
+          href="under-the-african-sky.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+
+      <!-- 29 -->
+      <div class="card">
+        <div class="card-number">29</div>
+
+        <div class="section-label">
+          Featured Publication
+        </div>
+
+        <h3>
+          The Village Beyond the Hill
+        </h3>
+
+        <p>
+          A compelling story of community, tradition, family and the
+          challenges of embracing change.
+        </p>
+
+        <a
+          href="the-village-beyond-the-hill.html"
+          class="btn btn-primary"
+        >
+          Read Preview
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- ==================================================
+     BLOG
+================================================== -->
+
+<section class="blog" id="blog">
+
+<div class="container">
+
+<div class="section-label">
+Insights & Ideas
+</div>
+
+<h2 class="section-title">
+My Blog
+</h2>
+
+<p class="section-text">
+Thoughts, insights and practical perspectives on technology,
+leadership, research, agriculture, creativity and community
+development.
+</p>
+
+<div class="blog-grid">
+
+<!-- ARTICLE 01 -->
+
+<article class="blog-card">
+
+<div class="blog-number">
+01
+</div>
+
+<div class="blog-category">
+TECHNOLOGY
+</div>
+
+<h3>
+Technology and the Future of Digital Empowerment
+</h3>
+
+<p>
+Exploring how technology and digital skills can create
+new opportunities for individuals, young people and
+communities.
+</p>
+
+<a href="#" class="read-more">
+Read Article →
+</a>
+
+</article>
+
+
+<!-- ARTICLE 02 -->
+
+<article class="blog-card">
+
+<div class="blog-number">
+02
+</div>
+
+<div class="blog-category">
+PROJECTS & LEADERSHIP
+</div>
+
+<h3>
+Lessons from Project Management and Leadership
+</h3>
+
+<p>
+Reflections on planning, leadership, teamwork and the
+importance of turning ideas into practical projects.
+</p>
+
+<a href="#" class="read-more">
+Read Article →
+</a>
+
+</article>
+
+
+<!-- ARTICLE 03 -->
+
+<article class="blog-card">
+
+<div class="blog-number">
+03
+</div>
+
+<div class="blog-category">
+RESEARCH
+</div>
+
+<h3>
+Why Research Matters in Community Development
+</h3>
+
+<p>
+Understanding how research, evidence and community
+knowledge can contribute to better decisions and
+sustainable development.
+</p>
+
+<a href="#" class="read-more">
+Read Article →
+</a>
+
+</article>
+
+
+<!-- ARTICLE 04 -->
+
+<article class="blog-card">
+
+<div class="blog-number">
+04
+</div>
+
+<div class="blog-category">
+AGRICULTURE & INNOVATION
+</div>
+
+<h3>
+Technology and the Future of Agriculture
+</h3>
+
+<p>
+Exploring practical ways technology, digital knowledge
+and innovation can support farmers and agricultural
+communities.
+</p>
+
+<a href="#" class="read-more">
+Read Article →
+</a>
+
+</article>
+
+
+<!-- ARTICLE 05 -->
+
+<article class="blog-card">
+
+<div class="blog-number">
+05
+</div>
+
+<div class="blog-category">
+WRITING & CREATIVITY
+</div>
+
+<h3>
+Why I Write
+</h3>
+
+<p>
+A personal reflection on storytelling, creativity and
+the role of writing in expressing ideas, experiences
+and possibilities.
+</p>
+
+<a href="#" class="read-more">
+Read Article →
+</a>
+
+</article>
+
+
+<!-- ARTICLE 06 -->
+
+<article class="blog-card">
+
+<div class="blog-number">
+06
+</div>
+
+<div class="blog-category">
+COMMUNITY
+</div>
+
+<h3>
+Building Ideas That Serve Communities
+</h3>
+
+<p>
+Reflections on community-focused innovation and the
+importance of creating practical solutions around
+real local needs.
+</p>
+
+<a href="#" class="read-more">
+Read Article →
+</a>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="education" id="education">
+
+<div class="container">
+
+<div class="section-label">
+Education
+</div>
+
+<h2 class="section-title">
+Qualifications 
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="card-number">01</div>
+<h3>Master's in Computer Science</h3>
+
+<p class="section-text">
+Postgraduate at Kenya Methodist University.
+</p>
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">02</div>
+<h3>Bachelor in Information Science</h3>
+
+
+<p class="section-text">
+From University of Nairobi 
+</p>
+</div>
+
+<div class="card">
+<div class="card-number">03</div>
+<h3>Diploma in InformationTechnology</h3>
+
+<p class="section-text">
+From Zetech University 
+</p>
+</div>
+<div class="card">
+<div class="card-number">04</div>
+<h3>Graphic design and ComputerRepair</h3>
+
+<p class="section-text">
+From Webbs Institute 
+</p>
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     SKILLS
+================================================== -->
+
+<section class="skills" id="skills">
+
+<div class="container">
+
+<div class="section-label">
+Professional Skills
+</div>
+
+<h2 class="section-title">
+Skills
+</h2>
+
+<div class="skill-list">
+
+<div class="skill">Information Technology</div>
+<div class="skill">Information Science</div>
+<div class="skill">Cybersecurity</div>
+<div class="skill">Computer Networking</div>
+<div class="skill">Project Management</div>
+<div class="skill">Leadership</div>
+<div class="skill">Research</div>
+<div class="skill">Monitoring & Evaluation</div>
+<div class="skill">Digital Empowerment</div>
+<div class="skill">Creative Writing</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     APPROACH
+================================================== -->
+
+<section class="approach">
+
+<div class="container">
+
+<div class="section-label">
+My Approach
+</div>
+
+<h2 class="section-title">
+Knowledge. Technology. Creativity. Leadership. Impact.
+</h2>
+
+<p class="motto">
+Learn. Create. Build.
+</p>
+
+<p class="section-text">
+I believe knowledge becomes more valuable when it is applied,
+technology becomes more meaningful when it solves real problems,
+and creativity becomes powerful when it inspires people and
+opens new possibilities.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ==================================================
+     CONTACT
+================================================== -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<h2 class="section-title">
+Let's Connect
+</h2>
+
+<p class="section-text">
+I am open to professional connections, collaboration, creative
+opportunities, research discussions and community-focused projects.
+</p>
+<a
+    href="contacts.html"
+    class="btn-primary"
+  >
+    Get in Touch 
+  </a>
+
+
+</div>
+
+</div>
+</div>
+
+
+
+</section>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer>
+
+<p>
+<strong>Abdullahi Aden</strong>
+</p>
+
+<p>
+Technology by Profession. Creativity by Passion.
+</p>
+
+<p>
+© 2026 Abdullahi Aden. All Rights Reserved.
+</p>
+
+</footer>
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const sideMenu = document.getElementById("sideMenu");
+  const closeBtn = document.getElementById("closeBtn");
+
+  // Open menu
+  menuBtn.addEventListener("click", () => {
+    sideMenu.classList.add("active");
+  });
+
+  // Close menu
+  closeBtn.addEventListener("click", () => {
+    sideMenu.classList.remove("active");
+  });
+
+  // Close menu after clicking a navigation link
+  document.querySelectorAll(".side-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      sideMenu.classList.remove("active");
+    });
+  });
+</script>
+
+</body>
+</html>
