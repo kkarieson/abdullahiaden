@@ -698,6 +698,173 @@ section {
   color: var(--red);
 }
 
+/* ==================================================
+   FAQ & SUGGESTIONS
+================================================== */
+
+.faq-feedback {
+  background: var(--light-grey);
+}
+
+.faq-wrapper {
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+/* FAQ accordion */
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 22px;
+  border: none;
+  background: var(--white);
+  color: var(--black);
+  text-align: left;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.faq-question:hover {
+  color: var(--red);
+}
+
+.faq-icon {
+  color: var(--red);
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 22px 20px;
+  color: var(--grey);
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* Suggestions */
+.suggestions-box {
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 35px;
+  background: var(--black);
+  border: 1px solid #333;
+  border-left: 4px solid var(--red);
+  border-radius: 8px;
+}
+
+.suggestions-box h3 {
+  color: var(--white);
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.suggestions-box p {
+  color: #cccccc;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.suggestion-form {
+  display: grid;
+  gap: 16px;
+}
+
+.suggestion-form input,
+.suggestion-form textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  background: #111;
+  color: var(--white);
+  outline: none;
+}
+
+.suggestion-form input:focus,
+.suggestion-form textarea:focus {
+  border-color: var(--red);
+}
+
+.suggestion-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.suggestion-form input::placeholder,
+.suggestion-form textarea::placeholder {
+  color: #999;
+}
+
+.suggestion-form button {
+  width: fit-content;
+  padding: 11px 24px;
+  background: var(--red);
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.suggestion-form button:hover {
+  background: var(--white);
+  color: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .faq-wrapper {
+    margin-top: 30px;
+  }
+
+  .faq-question {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .faq-answer {
+    padding: 0 16px 18px;
+    font-size: 14px;
+  }
+
+  .suggestions-box {
+    margin-top: 45px;
+    padding: 25px 20px;
+  }
+
+  .suggestions-box h3 {
+    font-size: 21px;
+  }
+
+  .suggestion-form button {
+    width: 100%;
+  }
 
 /* ==================================================
    CONTACT
@@ -2332,6 +2499,177 @@ opens new possibilities.
 </div>
 
 </section>
+<section class="faq-feedback" id="faq">
+
+  <div class="container">
+
+    <div class="section-label">
+      Questions & Feedback
+    </div>
+
+    <h2 class="section-title">
+      Frequently Asked Questions
+    </h2>
+
+    <p class="section-text">
+      Find answers to some common questions about my professional interests,
+      creative work, publications, research and collaboration opportunities.
+    </p>
+
+
+    <!-- FAQ LIST -->
+
+    <div class="faq-wrapper">
+
+      <div class="faq-item">
+
+        <button class="faq-question" type="button">
+          What does Karieson Creative Hub focus on?
+          <span class="faq-icon">+</span>
+        </button>
+
+        <div class="faq-answer">
+          Karieson Creative Hub brings together technology, research,
+          creative writing, digital publishing, project development and
+          community-focused innovation.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question" type="button">
+          What professional areas are you interested in?
+          <span class="faq-icon">+</span>
+        </button>
+
+        <div class="faq-answer">
+          My professional interests include Information Technology,
+          Information Science, cybersecurity, networking, project management,
+          research, monitoring and evaluation, agriculture and digital
+          empowerment.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question" type="button">
+          Where can I find your books and publications?
+          <span class="faq-icon">+</span>
+        </button>
+
+        <div class="faq-answer">
+          My creative publications and eBook projects are featured through
+          Karieson Creative Hub. You can explore the featured publications
+          and access their individual preview pages through the website.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question" type="button">
+          Can I collaborate with you on a project?
+          <span class="faq-icon">+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes. I am open to professional connections, creative opportunities,
+          research discussions, collaboration and community-focused projects.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question" type="button">
+          Can I discuss a research or technology idea with you?
+          <span class="faq-icon">+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes. You can get in touch to discuss ideas related to technology,
+          research, digital empowerment, agriculture, innovation and
+          community development.
+        </div>
+
+      </div>
+
+
+      <div class="faq-item">
+
+        <button class="faq-question" type="button">
+          How can I contact you?
+          <span class="faq-icon">+</span>
+        </button>
+
+        <div class="faq-answer">
+          You can use the Get in Touch page to reach out for professional
+          connections, collaboration, creative opportunities, research
+          discussions and community-focused projects.
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SUGGESTIONS -->
+
+    <div class="suggestions-box">
+
+      <h3>
+        Have a Suggestion?
+      </h3>
+
+      <p>
+        Your ideas and feedback are welcome. Share a suggestion, question
+        or idea that could help improve the website and future content.
+      </p>
+
+      <form
+        class="suggestion-form"
+        action="mailto:"
+        method="post"
+        enctype="text/plain"
+      >
+
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+        >
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        >
+
+        <textarea
+          name="message"
+          placeholder="Write your suggestion or feedback..."
+          required
+        ></textarea>
+
+        <button type="submit">
+          Submit Suggestion
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
 
 
 <!-- ==================================================
@@ -2408,6 +2746,31 @@ Technology by Profession. Creativity by Passion.
       sideMenu.classList.remove("active");
     });
   });
+</script>
+<script>
+/* ==================================================
+   FAQ ACCORDION
+================================================== */
+
+document.querySelectorAll(".faq-question").forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    const item = button.parentElement;
+
+    document.querySelectorAll(".faq-item").forEach(otherItem => {
+
+      if (otherItem !== item) {
+        otherItem.classList.remove("active");
+      }
+
+    });
+
+    item.classList.toggle("active");
+
+  });
+
+});
 </script>
 
 </body>
