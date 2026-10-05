@@ -1,0 +1,538 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Love Beyond the Distance | Karieson</title><style>
+
+:root {
+    --black: #222222;
+    --red: #c40000;
+    --white: #ffffff;
+    --grey: #777777;
+    --border: #dddddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #eeeeee;
+    color: var(--black);
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    background: var(--black);
+    padding: 18px 25px;
+}
+
+.header-inner {
+    width: min(900px, 94%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.back {
+    color: var(--white);
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: var(--red);
+}
+
+
+/* ================= BOOK ================= */
+
+.book {
+    width: min(760px, 94%);
+    margin: 35px auto 60px;
+}
+
+
+/* ================= PAGE ================= */
+
+.page {
+    min-height: 900px;
+    background: var(--white);
+    margin-bottom: 25px;
+    padding: 80px 80px;
+    border: 1px solid var(--border);
+}
+
+
+/* ================= TITLE PAGE ================= */
+
+.title-page {
+    min-height: 900px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.title-content {
+    width: 100%;
+    padding-top: 180px;
+}
+
+.title {
+    color: var(--red);
+
+    font-family: "Brush Script MT",
+                 "Segoe Script",
+                 cursive;
+
+    font-size: clamp(48px, 8vw, 78px);
+
+    font-weight: bold;
+    line-height: 1.15;
+
+    margin-bottom: 55px;
+}
+
+.subtitle {
+    color: var(--grey);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(16px, 2.5vw, 21px);
+
+    font-weight: bold;
+    font-style: italic;
+
+    line-height: 1.5;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+.author {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 80px;
+
+    color: var(--black);
+
+    font-size: 18px;
+    font-weight: bold;
+
+    line-height: 1.8;
+}
+
+.author span {
+    display: block;
+}
+
+
+/* ================= SECTION HEADINGS ================= */
+
+.section-title {
+    text-align: center;
+    color: var(--black);
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.red-line {
+    width: 55px;
+    height: 3px;
+    background: var(--red);
+    margin: 0 auto 55px;
+}
+
+
+/* ================= DEDICATION ================= */
+
+.dedication-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.dedication {
+    max-width: 500px;
+    margin: auto;
+    font-size: 19px;
+    line-height: 2;
+    font-style: italic;
+}
+
+
+/* ================= AUTHOR'S NOTE ================= */
+
+.author-note p,
+.chapter p {
+    color: var(--black);
+    font-size: 17px;
+    line-height: 1.95;
+    text-align: justify;
+    margin-bottom: 25px;
+}
+
+    /* ==================================================
+   FICTION NOTICE
+================================================== */
+
+.fiction-notice {
+    margin-top: 35px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--corporate-grey);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+.fiction-notice strong {
+    display: block;
+
+    color: var(--corporate-black);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+/* ================= CHAPTER ================= */
+
+.chapter-number {
+    text-align: center;
+    color: var(--red);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.chapter-title {
+    text-align: center;
+    color: var(--black);
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.chapter .red-line {
+    margin-bottom: 45px;
+}
+
+.chapter p:first-of-type::first-letter {
+    font-size: 55px;
+    float: left;
+    line-height: .8;
+    padding-right: 7px;
+    color: var(--red);
+}
+
+.end-preview {
+    text-align: center !important;
+    color: var(--red) !important;
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: var(--black);
+    color: #aaaaaa;
+    text-align: center;
+    padding: 25px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+footer span {
+    color: var(--red);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .book {
+        width: 96%;
+        margin-top: 15px;
+    }
+
+    .page {
+        min-height: 700px;
+        padding: 55px 25px;
+        margin-bottom: 15px;
+    }
+
+    .title-page {
+        min-height: 700px;
+    }
+
+    .title-content {
+        padding-top: 120px;
+    }
+
+    .title {
+        font-size: 45px;
+        margin-bottom: 50px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .author {
+        bottom: 55px;
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .author-note p,
+    .chapter p {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+}
+
+</style></head><body><header><div class="header-inner">
+
+    <img
+        src="karieson_logo.png"
+        alt="karieson"
+        class="logo">
+
+    <a
+        href="../ebooks.html"
+        class="back">
+        ← Back to eBooks
+    </a>
+
+</div>
+
+</header><main class="book"><!-- ================= TITLE PAGE ================= -->
+
+<section class="page title-page">
+
+    <div class="title-content">
+
+        <h1 class="title">
+            Love Beyond the Distance
+        </h1>
+
+        <h2 class="subtitle">
+            A Story of Love, Distance and the Heart's Journey
+        </h2>
+
+        <div class="author">
+            Abdullahi Sheikh Aden
+            <span>(Karieson)</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEDICATION ================= -->
+
+<section class="page dedication-page">
+
+    <div>
+
+        <h2 class="section-title">
+            Dedication
+        </h2>
+
+        <div class="red-line"></div>
+
+        <p class="dedication">
+            To every heart that has loved across distance,
+            waited through uncertainty, and continued to
+            believe that genuine love can survive the miles
+            between two people.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AUTHOR'S NOTE ================= -->
+
+<section class="page author-note">
+
+    <h2 class="section-title">
+        Author's Note
+    </h2>
+
+    <div class="red-line"></div>
+
+    <p>
+        <em>Love Beyond the Distance</em> is a story about the spaces
+        that can exist between people who deeply care for
+        one another.
+    </p>
+
+    <p>
+        Distance is not always measured in miles. Sometimes
+        it is created by circumstances, silence, fear,
+        family expectations, or the choices we make when
+        life becomes difficult.
+    </p>
+
+    <p>
+        This story explores love not as something that is
+        always easy, but as something that requires patience,
+        honesty, sacrifice and courage.
+    </p>
+
+    <p>
+        Through the journey of its characters, we are
+        reminded that loving someone can sometimes mean
+        learning how to wait, how to trust, and how to
+        understand what truly matters.
+    </p>
+
+    <p>
+        Ayaan and Hussein's journey reminds us that two
+        people can be separated physically without
+        necessarily separating their hearts.
+    </p>
+
+    <p>
+        Some journeys take years. Some answers arrive late.
+        And some love stories need distance before they can
+        finally understand themselves.
+    </p>
+
+    <p>
+        I hope you enjoy Ayaan and Hussein's journey.
+    </p>
+
+    <p>
+        And perhaps, somewhere within these pages, you will
+        find a reflection of a love, a distance, a hope, or
+        a person you once carried in your own heart.
+    </p>
+
+    <p>
+        Abdullahi Sheikh Aden
+    </p>
+
+    <p class="fiction-notice">
+        <strong>This is a work of fiction.</strong>
+        The characters, names, places, events and situations
+        presented in this book are products of the author's
+        imagination. Any resemblance to actual persons,
+        living or dead, or to actual events or places is
+        purely coincidental.
+    </p>
+
+</section>
+
+
+<!-- ================= CHAPTER ONE ================= -->
+
+<section class="page chapter">
+
+    <div class="chapter-number">
+        CHAPTER ONE
+    </div>
+
+    <h2 class="chapter-title">
+        The Distance Between Us
+    </h2>
+
+    <div class="red-line"></div>
+
+
+    <p>
+        The message that never came was the beginning of
+        everything Ayaan had once been afraid of losing.
+    </p>
+
+    <p>
+        That morning, she checked her phone before she even
+        opened her eyes completely. Nothing. No message. No
+        missed call. No explanation. Just the quiet glow of
+        an empty screen, staring back at her as if it knew
+        something she didn't.
+    </p>
+
+    <p>
+        She remained beside the window, holding the phone
+        loosely in her hand while the first light of morning
+        slipped through the curtains. Outside, the world was
+        waking as usual. Cars moved along the road. Shopkeepers
+        prepared to open their doors. People hurried toward
+        another ordinary day.
+    </p>
+
+    <p>
+        But Ayaan's world had never felt less ordinary.
+    </p>
+
+<p class="end-preview">
+            — End of Preview —
+        </p>
+
+    </section>
+
+</main><footer>Karieson Creative Hub
+<span>•</span>
+Love Beyond the Distance
+<span>•</span>
+All Rights Reserved
+
+</footer></body>
+</html>
+
+
+        
+
+
